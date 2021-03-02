@@ -1,23 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
+import TagManager from 'react-gtm-module'
+import ReactGa from 'react-ga'
+import { useEffect } from 'react';
+import {Link, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Home from './components/home'
+import Products from './components/products'
+import Checkout from './components/checkout'
+
+ 
+const tagManagerArgs = {
+    gtmId: 'GTM-NBTPBKD'
+}
+ 
+TagManager.initialize(tagManagerArgs)
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>
+      <Router>
+        <Link to="/">Home</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/checkout">Checkout</Link>
+
+        <Switch>
+          <Route path="/products">
+            <Products />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+      </>
     </div>
   );
 }
