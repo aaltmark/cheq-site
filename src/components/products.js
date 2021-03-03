@@ -1,14 +1,14 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 
-class Products extends React.Component {
+class Services extends React.Component {
     render(){
         return(   
             <div>
-                Products
+                Services
             </div>
         )
     }
 }
 
-export default Products;
+export default Services;

@@ -22,12 +22,12 @@ function App() {
       <>
       <Router>
         <Link to="/">Home</Link>
-        <Link to="/products">Products</Link>
+        <Link to="/services">Services</Link>
         <Link to="/checkout">Checkout</Link>
 
         <Switch>
-          <Route path="/products">
-            <Products />
+          <Route path="/services">
+            <Services />
           </Route>
           <Route path="/checkout">
             <Checkout />
