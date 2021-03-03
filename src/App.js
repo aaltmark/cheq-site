@@ -5,7 +5,7 @@ import ReactGa from 'react-ga'
 import { useEffect } from 'react';
 import {Link, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Home from './components/home'
-import Products from './components/products'
+import Services from './components/services'
 import Checkout from './components/checkout'
 
  
