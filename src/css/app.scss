@@ -1,0 +1,30 @@
+.app {
+    padding: 3rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    background-color: purple;
+
+    &__logo {
+        display: flex;
+        height: 20rem;
+        width: 20rem;
+        border-radius: 50%;
+    }
+
+    &__links {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1rem;
+            text-align: center;
+            color: whitesmoke;
+        }
+    }
+}
+

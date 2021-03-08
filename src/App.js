@@ -5,8 +5,10 @@ import ReactGa from 'react-ga'
 import { useEffect } from 'react';
 import {Link, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Home from './components/home'
-import Services from './components/services'
+import Flowers from './components/flowers'
 import Checkout from './components/checkout'
+import './css/app.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
  
 const tagManagerArgs = {
@@ -18,16 +20,18 @@ TagManager.initialize(tagManagerArgs)
 
 function App() {
   return (
-    <div className="App">
-      <>
-      <Router>
-        <Link to="/" onClick={() => {window.location.href="/"}}>Home</Link>
-        <Link to="/services" onClick={() => {window.location.href="/services"}}>Services</Link>
-        <Link to="/checkout" onClick={() => {window.location.href="/checkout"}}>Checkout</Link>
+    <div className="app">
+      <img src="https://i.ibb.co/LQL0tJt/logo.png" alt="logo" class="app__logo"/>
+        <Router>
+          <div class="app__links">
+            <Link to="/" onClick={() => {window.location.href="/"}}>Home</Link>
+            <Link to="/flowers" onClick={() => {window.location.href="/services"}}>Services</Link>
+            <Link to="/checkout" onClick={() => {window.location.href="/checkout"}}>Checkout</Link>
+          </div>
 
         <Switch>
-          <Route path="/services">
-            <Services />
+          <Route path="/flowers">
+            <Flowers />
           </Route>
           <Route path="/checkout">
             <Checkout />
@@ -37,8 +41,8 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      </>
-    </div>
+      </div>
+      
   );
 }
 
