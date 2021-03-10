@@ -25,7 +25,7 @@ function App() {
         <Router>
           <div class="app__links">
             <Link to="/" onClick={() => {window.location.href="/"}}>Home</Link>
-            <Link to="/flowers" onClick={() => {window.location.href="/services"}}>Services</Link>
+            <Link to="/flowers" onClick={() => {window.location.href="/flowers"}}>Flowers</Link>
             <Link to="/checkout" onClick={() => {window.location.href="/checkout"}}>Checkout</Link>
           </div>
 

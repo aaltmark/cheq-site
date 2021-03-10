@@ -1,0 +1,73 @@
+.flowers {
+    height: 100%;
+    width: 100%;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4rem;
+    margin-top: 1.5rem;
+
+    &__title {
+
+    }
+
+    &__inventory {
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        padding: 1rem;
+
+        &-1 {
+            margin-bottom: 2rem;
+        }
+        &-2 {
+            margin-bottom: 2rem;
+        }
+
+        &__picture {
+            width: 50%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 3rem 6rem rgba(rgba(0, 0, 0, 0), .1);
+        }
+
+        &__button {
+            &, //this will allow us to style next step button element. it doesn't have link or visited classes
+            &:link,
+            &:visited { /* link/visited are states of button selector (like a hover)- pseudo class*/
+                text-transform: uppercase;
+                background-color: lightsalmon;
+                text-decoration: none; /* gets rid of underline of a tag */
+                padding: 1rem 2rem; /* first for top/bottom and then left/right*/
+                display: inline-block; /* before was inline element so was on top of text. this gives padding and treats it like text */
+                border-radius: 10rem; /* shapes it like an oval */
+                transition: all .2s; /* all properties enabled to be animated*/
+                position: relative; /* this allows our AFTER element below to be positioned absolute in reference to our buttons*/
+                color: whitesmoke;
+
+                // change for the next step button element 
+                border: none;
+                cursor: pointer;
+            }
+
+            &:hover { /* animation for hover */
+                transform: translateY(-3px); /* MOVES UP - y axis moves from top to bottom so negative works */
+                box-shadow: 0 1rem 2rem rgba(black, .2); /* first is offset in x direction, then y, then BLUR, color black with 20% opacity (subtle shadow)*/
+
+                &::after { /* when we hover on the button, style the after element behind it*/
+                    transform: scaleX(1.4) scaleY(1.6); /* increase the element on both axises*/
+                    opacity: 0; /* fade it out - makes it transparent*/
+                }
+            }
+
+            &:active, /* when we click it */
+            &:focus { /* specifically for 'next steps' btn in form  */
+                outline: none; //to get rid of blue box when hit 'next steps' btn in form
+                transform: translateY(-1px); /* in relation to initial link state, not hover*/
+                box-shadow: 0 .5rem 1rem rgba(black, .2); /* lose a bit of shadow and blur when clicked v hover */
+            }
+        }
+
+    }
+}
